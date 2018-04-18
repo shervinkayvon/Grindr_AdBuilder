@@ -1,0 +1,308 @@
+*:focus,
+label {
+	outline: none !important;
+}
+
+html,
+body {
+	min-height: 100%;
+	height: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+img.logo {
+	width: 32px;
+	display: inline-block;
+	cursor: pointer;
+	margin-right: 13px;
+}
+
+.title {
+	line-height: 50px;
+	font-size: 30px;
+}
+
+hr {
+	border-top: 1px solid #bababa;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 50px;
+	background: #dc1f3e;
+	color: #ffffff;
+	margin-top: 0;
+	padding: 20px;
+}
+
+h3 span,
+h4 span {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 1.3em;
+	color: red;
+	line-height: 1;
+}
+
+button {
+	background-color: #c9c6c6;
+}
+
+#template_picker,
+#template_builder {
+	text-align: center;
+}
+
+#template_picker .templates {
+	width: 24%;
+	display: inline-block;
+	cursor: pointer;
+}
+
+#template_picker h3 {
+	font-size: 2vw;
+}
+
+#template_picker img {
+	width: 100%;
+}
+
+#template_builder {
+	display: none;
+	margin: 0 0 50px;
+}
+
+#project_edit {
+	margin: 0 0 40px;
+}
+
+#template_builder.active #project_name_form {
+	display: none;
+}
+
+#build_box_wrapper,
+#admin_box {
+	display: none;
+}
+
+#template_builder.active #build_box_wrapper,
+#template_builder.active #admin_box {
+	display: inline-block;
+	margin: 20px;
+	vertical-align: bottom;
+}
+
+#build_box_wrapper p {
+	max-width: 550px;
+	padding: 0 20px 10px;
+	margin: 0 auto;
+}
+
+#ad_type_view,
+#device_view,
+#device_view .btn-group,
+#button_area {
+	margin: 0 0 20px;
+}
+
+#inbox_header {
+	display: none;
+	width: 375px;
+	height: 64px;
+	background: url("img/inbox_header.jpg") no-repeat 0 0;
+	margin: 0 auto -1px;
+}
+
+html.tablet.inbox #inbox_header,
+html.phone.inbox #inbox_header {
+	display: block;
+}
+
+html.tablet.inbox #inbox_header {
+	width: 768px;
+	background: url(img/inbox_header.jpg) no-repeat -375px 0;
+}
+
+#in_app_X {
+	display: block;
+	position: relative;
+	z-index: 2;
+	width: 39px;
+	height: 39px;
+	background: url(img/X.png) no-repeat right bottom / 29px 29px;
+	margin: 0 0 -40px 76px;
+}
+
+body.template4 #in_app_X {
+	margin: 0 0 -39px 87px;
+}
+
+html.tablet #in_app_X {
+	margin: 0 0 -39px 0;
+}
+
+html.tablet.inbox #in_app_X,
+html.phone.inbox #in_app_X {
+	display: none;
+}
+
+#canvas {
+	display: inline-block;
+	position: relative;
+	cursor: crosshair;
+	overflow: hidden;
+	user-select: none;
+}
+
+.rectangle {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.12);
+	border: 2px dotted #525151;
+	cursor: pointer;
+}
+
+#build_box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	border: 1px solid grey;
+}
+
+body.template4 #build_box {
+	z-index: -1;
+}
+
+html.phone #canvas,
+html.in_app.phone #canvas {
+	width: 375px;
+	height: 667px;
+}
+
+html.inbox.phone #canvas {
+	width: 375px;
+	height: 603px;
+}
+
+html.tablet #canvas,
+html.in_app.tablet #canvas {
+	width: 768px;
+	height: 1024px;
+}
+
+html.inbox.tablet #canvas {
+	width: 768px;
+	height: 960px;
+}
+
+#admin_box {
+	width: 640px;
+	height: auto;
+	vertical-align: top;
+	padding: 0 50px;
+	height: 880px;
+	overflow: auto;
+	background: #ebebeb;
+}
+
+#button_area {
+	margin: 0 0 130px;
+}
+
+#button_area {
+	display: none;
+}
+
+body.template4 #button_area {
+	display: block;
+}
+
+body.template4 #headline_edit,
+body.template4 #subtext_edit,
+body.template4 #disctext_edit,
+body.template4 #button_edit .text,
+body.template4 #button_edit .size,
+body.template4 #button_edit .color,
+body.template4 #button_edit .bg_color,
+body.template4 #button_edit .bot_marg {
+	display: none;
+}
+
+.content_options {
+	text-align: left;
+	overflow: hidden;
+	width: 520px;
+	margin: 0 auto;
+}
+
+.content_options>* {
+	float: left;
+}
+
+.content_options>*:last-child {
+	float: right;
+}
+
+.input-group {
+	width: 150px;
+}
+
+.input-group-btn {
+	display: inline;
+}
+
+.input-group .input-number {
+	display: none;
+}
+
+.input-group-btn button {
+	padding: 6px 30px;
+}
+
+#image_edit,
+#export_zip {
+	margin-bottom: 40px;
+}
+
+#imagepicker {
+	display: table;
+	width: 400px;
+	height: 200px;
+	margin: 20px auto;
+	cursor: pointer;
+	font-size: 1em;
+	text-transform: uppercase;
+	border: 2px dashed #000;
+	border-radius: 3px;
+}
+
+.dz-message {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.dz-error-message,
+.dz-success-mark,
+.dz-error-mark,
+.dz-preview {
+	display: none;
+}
+
+.dz-image img {
+	cursor: default;
+}
+
+#img_url {
+	float: none;
+	width: 100%;
+}
+
+textarea {
+	margin-bottom: 40px;
+}
+
+body.template4 .bg_size {
+	display: none;
+}
