@@ -138,7 +138,7 @@ if (!$hero_img) {
 		margin-right: 6%;
 	}
 
-	button {
+	.os_link {
 		padding: 3% 6%;
 		text-align: center;
 		text-decoration: none;
@@ -298,7 +298,7 @@ case 'template1':
 	<div class="inner_cont">
 		<h1>'. $headline_text . '</h1>
 		<h2>'. $subtxt_text . '</h2>
-		<button class="os_link">' . $btn_text . '</button>
+		<a class="os_link">' . $btn_text . '</a>
 		<h3>'. $disctxt_text . '</h3>
 	</div>
 	</div>
@@ -352,7 +352,7 @@ case 'template2':
 		<div class="bottom_container">
 			<div class="inner_cont">
 				<h2>'. $subtxt_text . '</h2>
-				<button class="os_link">' . $btn_text . '</button>
+				<a class="os_link">' . $btn_text . '</a>
 				<h3>'. $disctxt_text . '</h3>
 			</div>
 		</div>
@@ -384,7 +384,7 @@ case 'template3':
 	<div class="container">
 		<h1>'. $headline_text . '</h1>
 		<h2>'. $subtxt_text . '</h2>
-		<button class="os_link">' . $btn_text . '</button>
+		<a class="os_link">' . $btn_text . '</a>
 		<h3>'. $disctxt_text . '</h3>
 		</div>
 		<a class="close_button" href="appboy://close"></a>';
@@ -402,7 +402,7 @@ case 'template4':
 			background-size: '. $hero_img_size .';
 			background-color: '. $body_color .';
 		}
-		button {
+		.os_link {
 			position: absolute;
 			z-index: 999;
 			top: '.$rect_top.';
@@ -418,10 +418,72 @@ case 'template4':
 			padding: 0;
 			background-color: transparent;
 		}
+		.disclaimer_box {
+			display: none;
+			position: absolute;
+			z-index: 9999;
+			width: 280px;
+			height: 370px;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			background: #dededef2;
+			border-radius: 15px;
+			font-family: sans-serif;
+		}
+		.popup.disclaimer_box {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.headline {
+			font-size: 16px;
+			margin: 20px auto 30px;
+		}
+		.text_box {
+			width: 266px;
+	    height: 233px;
+	    margin: 0 auto 20px;
+	    padding: 5px;
+	    box-sizing: border-box;
+	    background: #fff;
+	    font-size: 12px;
+	    line-height: 1.5;
+		}
+		hr {
+			border: 0;
+			margin: 0;
+			width: 100%;
+			height: 1px;
+			background: #cbcbcb;
+		}
+		a {
+			color: #1872e3;
+			text-decoration: none;
+		}
+		.btn {
+			width: 138px;
+			font-size: 16px;
+			padding: 15px 0;
+			cursor: pointer;
+		}
+		.cancel {
+			border-right: 1px solid #cbcbcb;
+		}
 	</style>
 	<div class="container">
-		<button class="os_link"></button>
+		<a class="os_link"></a>
 		<a class="close_button" href="appboy://close"></a>
+		<div class="disclaimer_box">
+			<div class="headline">Subscription Information</div>
+			<div class="text_box">
+				Subscription purchases will be charged to your iTunes account. Subscriptions auto­renew under identical terms unless cancelled at least 24 hours before the current period ends. You can manage or cancel auto­renewal in your iTunes Account Settings after purchase. Any unused portion of a free trial period will be forfeited when you purchase a subscription. Any introductory pricing will automatically renew at the regular pricing after the time frame stated in the promotion. For more information, visit our <a href="grindr://openURL?url=https://www.grindr.com/app/terms-of-service/?lang=en"><strong>Terms</strong></a> and <a href="grindr://openURL?url=https://www.grindr.com/app/privacy-policy/?lang=en"><strong>Privacy Policy</strong></a>.
+			</div>
+			<hr />
+			<a class="btn cancel" href="appboy://close">Cancel</a>
+			<a class="btn continue">Continue</a>
+		</div>
 	</div>';
 	break;
 }
@@ -431,6 +493,8 @@ case 'template4':
 		var AndroidLink = '<?php echo $android_btn_url ?>';
 		var osLink = document.querySelector('.os_link');
 		var HTML = document.querySelector('html');
+		var continueLink = document.querySelector('.continue');
+		var disclaimerBox = document.querySelector('.disclaimer_box');
 
 		var getMobileOS = function getMobileOS() {
 			if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
@@ -443,7 +507,14 @@ case 'template4':
 		};
 
 		var addOsAttributes = function addOnClick() {
-			osLink.setAttribute('onclick', 'window.open("' + getMobileOS() +'")')
+			if (HTML.classList.contains('popup_box')) {
+				continueLink.setAttribute('href', getMobileOS())
+				osLink.addEventListener('click', function() {
+					disclaimerBox.classList.add('popup')
+				});
+			} else {
+				osLink.setAttribute('href', getMobileOS())
+			}
 		};
 		window.addEventListener('load', addOsAttributes);
 	</script>

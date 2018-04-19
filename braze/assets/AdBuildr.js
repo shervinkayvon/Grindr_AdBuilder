@@ -132,6 +132,17 @@ $(() => {
 			this.initSubmit()
 		},
 
+		addPopBox: function () {
+			let urlVal = this.ios_btn_url.val()
+			if (urlVal !== '') {
+				if (urlVal.indexOf('http') === -1) {
+					$('html').addClass('popup_box')
+				} else {
+					$('html').removeClass('popup_box')
+				}
+			}
+		},
+
 		checkForImage: function () {
 			let imgpicker = $('#imagepicker img').attr('alt')
 			if (!imgpicker) {
@@ -364,6 +375,7 @@ $(() => {
 			this.setDisctext()
 			this.setButton()
 			this.getHtmlClass()
+			this.addPopBox()
 		},
 
 		setProjectName: function () {
