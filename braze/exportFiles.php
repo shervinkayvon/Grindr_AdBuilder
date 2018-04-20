@@ -429,7 +429,7 @@ case 'template4':
 			left: 0;
 			right: 0;
 			margin: auto;
-			background: #dededef2;
+			background: #dedede;
 			border-radius: 15px;
 			font-family: sans-serif;
 		}
@@ -478,7 +478,7 @@ case 'template4':
 		<div class="disclaimer_box">
 			<div class="headline">Subscription Information</div>
 			<div class="text_box">
-				Subscription purchases will be charged to your iTunes account. Subscriptions auto­renew under identical terms unless cancelled at least 24 hours before the current period ends. You can manage or cancel auto­renewal in your iTunes Account Settings after purchase. Any unused portion of a free trial period will be forfeited when you purchase a subscription. Any introductory pricing will automatically renew at the regular pricing after the time frame stated in the promotion. For more information, visit our <a href="grindr://openURL?url=https://www.grindr.com/app/terms-of-service/?lang=en"><strong>Terms</strong></a> and <a href="grindr://openURL?url=https://www.grindr.com/app/privacy-policy/?lang=en"><strong>Privacy Policy</strong></a>.
+				Subscription purchases will be charged to your iTunes account. Subscriptions auto­renew under identical terms unless cancelled at least 24 hours before the current period ends. You can manage or cancel auto­renewal in your iTunes Account Settings after purchase. Any unused portion of a free trial period will be forfeited when you purchase a subscription. Any introductory pricing will automatically renew at the regular pricing after the time frame stated in the promotion. For more information, visit our <a href="https://www.grindr.com/app/terms-of-service/?lang=en"><strong>Terms</strong></a> and <a href="https://www.grindr.com/app/privacy-policy/?lang=en"><strong>Privacy Policy</strong></a>.
 			</div>
 			<hr />
 			<a class="btn cancel" href="appboy://close">Cancel</a>

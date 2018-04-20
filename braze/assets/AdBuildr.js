@@ -133,14 +133,14 @@ $(() => {
 		},
 
 		addPopBox: function () {
-			let urlVal = this.ios_btn_url.val()
-			if (urlVal !== '') {
-				if (urlVal.indexOf('http') === -1) {
-					$('html').addClass('popup_box')
-				} else {
-					$('html').removeClass('popup_box')
-				}
-			}
+			$('#legal_on').on('click', function() {
+				console.log('test')
+				$('html').addClass('popup_box')
+			})
+
+			$('#legal_off').on('click', function() {
+				$('html').removeClass('popup_box')
+			})
 		},
 
 		checkForImage: function () {

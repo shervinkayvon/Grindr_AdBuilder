@@ -288,6 +288,21 @@
 					<hr>
 				</div>
 
+				<div id="legal_disclaimer">
+					<h3>BRAZE LEGAL DISCLAIMER</h3>
+					<div class="leagl btn-group" data-toggle="buttons">
+						<label id="legal_off" class="btn btn-primary active">
+							<input type="radio" name="options" autocomplete="off" checked>Off
+						</label>
+						<label id="legal_on" class="btn btn-primary">
+							<input type="radio" name="options" autocomplete="off">On
+						</label>
+					</div>
+					<br>
+					<br>
+					<hr>
+				</div>
+
 				<!-- DISCLAIMER TEXT EDIT -->
 				<div id="disctext_edit">
 					<h3>DISCLAIMER</h3>
