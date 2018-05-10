@@ -188,7 +188,7 @@ $(() => {
 				'&btn_txt_color=' + this.btn_txt_color_input.val() +
 				'&btn_size=' + $('#button_size').val() +
 				'&btn_bot_marg=' + $('#button_bot_marg').val() +
-				'&ios_btn_url=' + encodeURIComponent($('#button_url_ios').val()) + '&android_btn_url=' + encodeURIComponent($('#button_url_android').val()) +
+				'&ios_btn_url=' + encodeURIComponent($('#button_url_ios').val() + this.convertToAmpersand($('#button_url_ios').val())) + '&android_btn_url=' + encodeURIComponent($('#button_url_android').val() + this.convertToAmpersand($('#button_url_android').val())) +
 				'&hero_img=' + this.checkForImage() +
 				'&hero_img_size=' + this.hero_img_size +
 				'&rect_left=' + rectLeft +
@@ -458,6 +458,20 @@ $(() => {
 			})
 		},
 
+		convertToAmpersand: function (url) {
+			let c = '?'
+			let externalLink = 'abExternalOpen=true'
+			
+			if (url.indexOf('?') !== -1) {
+				c = '&'
+			}
+			if (url.indexOf('http') === -1) {
+				c = ''
+				externalLink = ''
+			}
+			return c + externalLink
+		},
+
 		setButton: function () {
 			// SET BUTTON
 			let _this = this
@@ -476,9 +490,9 @@ $(() => {
 				$(this).val($(this).val().replace(/ /g, ''))
 			})
 
-			$(this.BUTTON).attr("onclick", "window.open('" + ios_url + "')")
+			$(this.BUTTON).attr("onclick", "window.open('" + ios_url + this.convertToAmpersand(ios_url) + "')")
 
-			$('.rectangle').attr("onclick", "window.open('" + ios_url + "')")
+			$('.rectangle').attr("onclick", "window.open('" + ios_url + this.convertToAmpersand(ios_url) + "')")
 
 			$(this.BUTTON).css({
 				'font-size': size + 'em',
