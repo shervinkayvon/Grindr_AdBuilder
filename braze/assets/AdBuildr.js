@@ -460,7 +460,7 @@ $(() => {
 
 		convertToAmpersand: function (url) {
 			let c = '?'
-			let externalLink = 'abExternalOpen=true'
+			let externalLink = 'abButtonId=0&abExternalOpen=true'
 			
 			if (url.indexOf('?') !== -1) {
 				c = '&'
